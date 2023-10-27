@@ -1,4 +1,4 @@
-class User{
+export default class User{
     constructor(id,name,age,salary,token,contactdetails,permissions,departmentId,createdAt,updatedAt){
         this.id = id;
         this.name = name;
@@ -22,6 +22,4 @@ class ContactDetails{
         this.address = address;
 
     }
-}
-
-export {User , ContactDetails}
+}export {User , ContactDetails}
