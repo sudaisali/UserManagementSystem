@@ -6,4 +6,4 @@ let user1 = new User("1","sduais","23","2000",12345,contactdetails)
 const userData = user1
 console.log(user1)
 fun.createUser(user1)
-console.table(Json)
+console.table(user1)

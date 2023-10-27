@@ -1,13 +1,43 @@
 {
-    "id": "1",
-    "name": "sduais",
-    "age": "23",
-    "salary": "2000",
-    "token": 12345,
-    "contactdetails": {
-        "city": "sialkot",
-        "state": "Punjab",
-        "phone": "03185097377",
-        "address": "AirportRoad Gohdpur"
-    }
+    "user": [
+        {
+            "id": "1",
+            "name": "sduais",
+            "age": "23",
+            "salary": "2000",
+            "token": 12345,
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "AirportRoad Gohdpur"
+            }
+        },
+        {
+            "id": "1",
+            "name": "sduais",
+            "age": "23",
+            "salary": "2000",
+            "token": 12345,
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "AirportRoad Gohdpur"
+            }
+        },
+        {
+            "id": "1",
+            "name": "sduais",
+            "age": "23",
+            "salary": "2000",
+            "token": 12345,
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "AirportRoad Gohdpur"
+            }
+        }
+    ]
 }
