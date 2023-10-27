@@ -5,14 +5,19 @@
             "name": "sduais",
             "age": "23",
             "salary": "2000",
-            "token": "sRynUPaParmd",
+            "token": "hLneVJLMOENg",
             "contactdetails": {
                 "city": "sialkot",
                 "state": "Punjab",
                 "phone": "03185097377",
                 "address": "Isl Gohdpur"
             },
-            "departmentId": 1,
+            "permissions": [
+                "isCreate",
+                "isDelete",
+                "isUpdate"
+            ],
+            "departmentId": 2,
             "createdAt": "10/27/2023"
         }
     ],
@@ -27,6 +32,27 @@
                 "isUpdate"
             ],
             "createdAt": "10/27/2023"
+        },
+        {
+            "id": 2,
+            "departmentName": "Hr",
+            "contactNo": "03185097377",
+            "permissions": [
+                "isCreate",
+                "isUpdate"
+            ],
+            "createdAt": "10/27/2023"
+        },
+        {
+            "id": 3,
+            "departmentName": "Dev",
+            "contactNo": "03185097377",
+            "permissions": [
+                "isDelete",
+                "isUpdate"
+            ],
+            "createdAt": "10/28/2023",
+            "UpdatedAt": null
         }
     ]
 }

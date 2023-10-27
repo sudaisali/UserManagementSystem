@@ -1,6 +1,7 @@
  import fs from 'fs'
  const path = './db.json'; // Define the path to the JSON file
  class User {
+
     constructor(id, name, age, salary, contactdetails, permissions, departmentId, updatedAt) {
         this.id = id;
         this.name = name;
@@ -30,12 +31,17 @@
     assignDepartment(department){
      this.departmentId = department.id
     }
+    assignPermission(department){
+        this.permissions = department.permissions
+    }
     saveUser() {
         const users = JSON.parse(fs.readFileSync(path, 'utf8'));
         users.user.push(this);
         fs.writeFileSync(path, JSON.stringify(users));
     }
+    
 }
+
 class ContactDetails {
     constructor(city, state, phone, address) {
         this.city = city;
