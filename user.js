@@ -1,4 +1,4 @@
-export default class User{
+class User{
     constructor(id,name,age,salary,token,contactdetails,permissions,departmentId,createdAt,updatedAt){
         this.id = id;
         this.name = name;
@@ -14,3 +14,14 @@ export default class User{
     }
    
 }
+class ContactDetails{
+    constructor(city,state,phone,address){
+        this.city = city;
+        this.state = state;
+        this.phone = phone;
+        this.address = address;
+
+    }
+}
+
+export {User , ContactDetails}
