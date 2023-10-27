@@ -1,7 +1,7 @@
  import fs from 'fs'
  const path = './db.json'; // Define the path to the JSON file
  class User {
-    constructor(id, name, age, salary, token, contactdetails, permissions, departmentId, createdAt, updatedAt) {
+    constructor(id, name, age, salary, contactdetails, permissions, departmentId, updatedAt) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -27,13 +27,14 @@
         const currentDate = new Date();
         return currentDate.toLocaleDateString(); 
       }
+    assignDepartment(department){
+     this.departmentId = department.id
+    }
     saveUser() {
         const users = JSON.parse(fs.readFileSync(path, 'utf8'));
         users.user.push(this);
         fs.writeFileSync(path, JSON.stringify(users));
     }
-
-
 }
 class ContactDetails {
     constructor(city, state, phone, address) {
@@ -43,4 +44,7 @@ class ContactDetails {
         this.address = address;
 
     }
-} export { User, ContactDetails }
+} 
+
+
+export { User, ContactDetails }
