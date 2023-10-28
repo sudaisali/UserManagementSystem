@@ -9,11 +9,17 @@ let contactdetails = new ContactDetails("sialkot","Punjab","03185097377","Isl Go
 //User Object
 let user1 = new User("sduais","23","2000",contactdetails)
 let user2 = new User("talha","24","2000",contactdetails)
+let user3 = new User("burhan","24","2000",contactdetails)
+let user4 = new User("Asad","24","2000",contactdetails)
+let user5 = new User("Abdullah","24","2000",contactdetails)
 
 // user1.getEmployeeDepartmentId('tksjSmcDTkFW')
 // console.log(user1.getEmployeeDepartmentId('tksjSmcDTkFW'))
 // console.log(user1.getEmployeePermissions('tksjSmcDTkFW'))
-user1.createEmployee('DNLYOMXgbJSi' , dep1)
+    user5.createEmployee('lGSeTcTCiaoX')
+ user3.addEmployeePermission("lGSeTcTCiaoX","dev")
+// user1.getDepartmentByName('dev')
+// user1.addEmployeePermission("DNLYOMXgbJSi","admin")
 //    user1.assignDepartment(dep1)
 //    user1.assignPermission(dep1)
 //    user1.saveUser()

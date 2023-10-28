@@ -43,13 +43,6 @@
         this.id = maxId + 1;
         return this.id;
     }
-    assignDepartment(department){
-     this.departmentId = department.id
-     this.permissions = department.permissions
-    }
-    assignPermission(department){
-        this.permissions = department.permissions
-    }
     saveUser() {
         const users = JSON.parse(fs.readFileSync(path, 'utf8'));
         users.user.push(this);
@@ -60,6 +53,12 @@
         let  data = users.user
         let user = data.find(element => element.token === userToken)
         return user.departmentId
+    }
+    getEmployeeByToken(userToken){
+        const users = this.readData();
+        let  data = users.user
+        let user = data.find(element => element.token === userToken)
+        return user
     }
     getEmployeePermissions(userToken){
         const users = this.readData();
@@ -94,7 +93,82 @@
             console.log("Unauthorized User")
         }
     }
-   
+    getDepartmentByName(depName){
+        const  departments = this.readData()
+        let  data = departments.department
+        let department = data.find(element => element.departmentName.toLowerCase() === depName.toLowerCase())
+        return department
+    }
+    findLastUser(){
+        const users = this.readData()
+        let  data = users.user
+        let user = data[data.length - 1]
+        return user
+    }
+    getAllUsers(){
+        const users = this.readData()
+        let  data = users.user
+        return data
+    }
+    
+    addEmployeePermission(userToken , departmentName){
+        const  departments = this.getDepartmentByName(departmentName)
+        const department = this.getDepartment(userToken)
+        const user = this.getEmployeeByToken(userToken)
+        const LastUser  = this.findLastUser();
+        if (this.getDepartment(userToken).length!= 0) {
+            if(departmentName.toLowerCase() == department.departmentName.toLowerCase() && department.permissions.includes("isCreate")&& user.permissions.includes("isCreate")){
+                if(LastUser.permissions == null && LastUser.departmentId == null){
+                     LastUser.permissions = departments.permissions;
+                     LastUser.departmentId = departments.id;
+                     let user = this.getAllUsers();
+                     const userIndex = user.findIndex(user => user.token === LastUser.token);
+                     if (userIndex !== -1) {
+                         const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                        users.user[userIndex] = LastUser;
+                         fs.writeFileSync(path, JSON.stringify(users));
+                         console.log("User data updated successfully.");
+                         let userArray = []
+                         userArray.push(LastUser)
+                         console.table(userArray)
+                         console.log(userArray)
+                     } 
+                }else{
+                    console.log("User Already have Permissions")
+                }
+                
+            }
+            else if(departments.departmentName.toLowerCase() != 'admin' && department.permissions.includes("isCreate")&& user.permissions.includes("isCreate")){
+                if(LastUser.permissions == null && LastUser.departmentId == null){
+                    LastUser.permissions = departments.permissions;
+                    LastUser.departmentId = departments.id;
+                    let user = this.getAllUsers();
+                    const userIndex = user.findIndex(user => user.token === LastUser.token);
+                    if (userIndex !== -1) {
+                        const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                       users.user[userIndex] = LastUser;
+                        fs.writeFileSync(path, JSON.stringify(users));
+                        console.log("User data updated successfully.");
+                        let userArray = []
+                        userArray.push(LastUser)
+                        console.table(userArray)
+                    } 
+               }else{
+                   console.log("User Already have Permissions")
+               }
+                  
+            }
+
+            else{
+                console.log("Sorry have No permission to Assign Department")
+            }
+            
+            
+       
+        }
+
+
+    }
     
 }
 
