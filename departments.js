@@ -104,7 +104,6 @@ class Department {
         }
         return null;
     }
-
     viewDepartments(){
         const departments = this.readData();
         console.table(departments.department)
