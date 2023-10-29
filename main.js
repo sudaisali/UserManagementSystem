@@ -15,21 +15,17 @@ let user5 = new User("Abdullah","24","2000",contactdetails)
 
 //  user3.createEmployee('LEeQeAPOOYeq')
 //  user3.addEmployeePermission("apQlUZVfnvVQ","dev")
-
 // user1.getEmployeeDepartmentId('tksjSmcDTkFW')
 // console.log(user1.getEmployeeDepartmentId('tksjSmcDTkFW'))
 // console.log(user1.getEmployeePermissions('tksjSmcDTkFW'))
 // user5.createEmployee('lGSeTcTCiaoX')
 // user3.assignEmployeePermission("lGSeTcTCiaoX","dev")
 // user1.deleteEmployee('DNLYOMXgbJSi','ZmtUfmvijFwn')
-  //user1.updateEmployee('PoeAVDZoGUPb',1, user1)
-    user1.addEmployeePermissions('QnvQDGnkNvhg',12, 'isUpdate')
-    // user1.removeEmployeePermissions('QnvQDGnkNvhg',12, 'isUpdate')
-
-user1.getEmployeeDetails()
-
-
-  //  user1.deleteEmployee('NdWHYvwkOuHb','PoeAVDZoGUPb')
+//user1.updateEmployee('PoeAVDZoGUPb',1, user1)
+// user1.addEmployeePermissions('QnvQDGnkNvhg',12, 'isUpdate')
+// user1.removeEmployeePermissions('QnvQDGnkNvhg',12, 'isUpdate')
+// user1.getEmployeeDetails()
+//  user1.deleteEmployee('NdWHYvwkOuHb','PoeAVDZoGUPb')
 //    dep1.getAllDepartments()
 // user1.getDepartmentByName('dev')
 // user1.addEmployeePermission("DNLYOMXgbJSi","admin")
