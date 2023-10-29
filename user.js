@@ -1,5 +1,6 @@
  import fs from 'fs'
- const path = './db.json'; // Define the path to the JSON file
+ const path = './db.json';
+ 
  class User {
 
     constructor(name, age, salary, contactdetails, permissions, departmentId, updatedAt) {
@@ -35,7 +36,7 @@
             console.log("Unauthorized User")
         }
     }
-    addEmployeePermission(userToken , departmentName){
+    assignEmployeePermission(userToken , departmentName){
         const  departments = this.getDepartmentByName(departmentName)
         const department = this.getDepartment(userToken)
         const user = this.getEmployeeByToken(userToken)
@@ -227,8 +228,124 @@
        
        
     }
-
-
+    addEmployeePermissions(userToken , employeeId , permission){
+           
+        const user = this.getEmployeeByToken(userToken)
+        const employee =  this.getEmployeById(employeeId)
+        const employeeDepartment = this.getDepartmentByEmployeeId(employeeId)
+        employee.permissions.push(permission)
+        employee.updatedAt = this.getCurrentDate()
+        if(user){
+            if(user.permissions.includes('isUpdate') && user.departmentId == 1){
+                    let user = this.getAllUsers();
+                    const userIndex = user.findIndex(user => user.token === employee.token);
+                    if (userIndex!== -1) {
+                        const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                        users.user[userIndex] = employee;
+                        fs.writeFileSync(path, JSON.stringify(users));
+                        console.log("Employee Permission Added successfully.");
+                        
+                
+                }
+                else{
+                    console.log("user is unauthorized")
+                }
+            }
+            else if (user.permissions.includes('isUpdate') && user.departmentId == 3){
+                if(employeeDepartment.id == '3'){
+                    let user = this.getAllUsers();
+                    const userIndex = user.findIndex(user => user.token === employee.token);
+                    if (userIndex!== -1) {
+                        const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                        users.user[userIndex] = employee;
+                        fs.writeFileSync(path, JSON.stringify(users));
+                        console.log("Employee Permission Added Successfully");
+                    }
+                }
+                else{
+                    console.log("user is unauthorized")
+                }
+        }
+            else{
+                if(user.permissions.includes('isUpdate') && user.departmentId == 2){
+                    if(employeeDepartment.id == '3' || employeeDepartment.id == '2'){
+                        let user = this.getAllUsers();
+                        const userIndex = user.findIndex(user => user.token === employee.token);
+                        if (userIndex!== -1) {
+                            const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                            users.user[userIndex] = employee;
+                            fs.writeFileSync(path, JSON.stringify(users));
+                            console.log("Employee Permission Added Sucessfully");
+                        }
+                    }
+                    else{
+                        console.log("user is unauthorized")
+                    }
+            }
+        }
+        }
+       
+       
+    }
+    removeEmployeePermissions(userToken , employeeId , permission){
+           
+        const user = this.getEmployeeByToken(userToken)
+        const employee =  this.getEmployeById(employeeId)
+        const employeeDepartment = this.getDepartmentByEmployeeId(employeeId)
+        employee.permissions.splice(employee.permissions.indexOf(permission), 1);
+        employee.updatedAt = this.getCurrentDate()
+        if(user){
+            if(user.permissions.includes('isUpdate') && user.departmentId == 1){
+                    let user = this.getAllUsers();
+                    const userIndex = user.findIndex(user => user.token === employee.token);
+                    if (userIndex!== -1) {
+                        const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                        users.user[userIndex] = employee;
+                        fs.writeFileSync(path, JSON.stringify(users));
+                        console.log("Employee Permission Added successfully.");
+                        
+                
+                }
+                else{
+                    console.log("user is unauthorized")
+                }
+            }
+            else if (user.permissions.includes('isUpdate') && user.departmentId == 3){
+                if(employeeDepartment.id == '3'){
+                    let user = this.getAllUsers();
+                    const userIndex = user.findIndex(user => user.token === employee.token);
+                    if (userIndex!== -1) {
+                        const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                        users.user[userIndex] = employee;
+                        fs.writeFileSync(path, JSON.stringify(users));
+                        console.log("Employee Permission Added Successfully");
+                    }
+                }
+                else{
+                    console.log("user is unauthorized")
+                }
+        }
+            else{
+                if(user.permissions.includes('isUpdate') && user.departmentId == 2){
+                    if(employeeDepartment.id == '3' || employeeDepartment.id == '2'){
+                        let user = this.getAllUsers();
+                        const userIndex = user.findIndex(user => user.token === employee.token);
+                        if (userIndex!== -1) {
+                            const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                            users.user[userIndex] = employee;
+                            fs.writeFileSync(path, JSON.stringify(users));
+                            console.log("Employee Permission Added Sucessfully");
+                        }
+                    }
+                    else{
+                        console.log("user is unauthorized")
+                    }
+            }
+        }
+        }
+       
+       
+    }
     getEmployeeDetails(){
         const users = this.readData();
         let  data = users.user
@@ -270,8 +387,7 @@
     getCurrentDate() {
         const currentDate = new Date();
         return currentDate.toLocaleDateString(); 
-      }
-    
+    }
     saveUser() {
         const users = JSON.parse(fs.readFileSync(path, 'utf8'));
         users.user.push(this);
@@ -355,10 +471,6 @@
         let user = data[data.length - 1]
         return user
     }
-    
-    
-   
-    
 }
 
 class ContactDetails {
