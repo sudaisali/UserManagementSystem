@@ -162,7 +162,73 @@
         }
     
     }
-    
+    updateEmployee(userToken , employeeId , updatedUser){
+           
+        const user = this.getEmployeeByToken(userToken)
+        const employee =  this.getEmployeById(employeeId)
+        const userDepartment = this.getDepartment(userToken)
+        const employeeDepartment = this.getDepartmentByEmployeeId(employeeId)
+      
+        
+        employee.name = updatedUser.name
+        employee.age = updatedUser.age
+        employee.salary = updatedUser.salary
+        employee.contactdetails = updatedUser.contactdetails
+        employee.updatedAt = this.getCurrentDate()
+        if(user){
+            if(user.permissions.includes('isUpdate') && user.departmentId == 1){
+                    let user = this.getAllUsers();
+                    const userIndex = user.findIndex(user => user.token === employee.token);
+                    if (userIndex!== -1) {
+                        const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                        users.user[userIndex] = employee;
+                        fs.writeFileSync(path, JSON.stringify(users));
+                        console.log("User Updated successfully.");
+                        
+                
+                }
+                else{
+                    console.log("user is unauthorized")
+                }
+            }
+            else if (user.permissions.includes('isUpdate') && user.departmentId == 3){
+                if(employeeDepartment.id == '3'){
+                    let user = this.getAllUsers();
+                    const userIndex = user.findIndex(user => user.token === employee.token);
+                    if (userIndex!== -1) {
+                        const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                        users.user[userIndex] = employee;
+                        fs.writeFileSync(path, JSON.stringify(users));
+                        console.log("User Updated successfully.");
+                    }
+                }
+                else{
+                    console.log("user is unauthorized")
+                }
+        }
+            else{
+                if(user.permissions.includes('isUpdate') && user.departmentId == 2){
+                    if(employeeDepartment.id == '3' || employeeDepartment.id == '2'){
+                        let user = this.getAllUsers();
+                        const userIndex = user.findIndex(user => user.token === employee.token);
+                        if (userIndex!== -1) {
+                            const users = JSON.parse(fs.readFileSync(path, 'utf8'));
+                            users.user[userIndex] = employee;
+                            fs.writeFileSync(path, JSON.stringify(users));
+                            console.log("User Updated successfully.");
+                        }
+                    }
+                    else{
+                        console.log("user is unauthorized")
+                    }
+            }
+        }
+        }
+       
+       
+    }
+
+
     getEmployeeDetails(){
         const users = this.readData();
         let  data = users.user
@@ -205,6 +271,7 @@
         const currentDate = new Date();
         return currentDate.toLocaleDateString(); 
       }
+    
     saveUser() {
         const users = JSON.parse(fs.readFileSync(path, 'utf8'));
         users.user.push(this);
@@ -227,6 +294,16 @@
             return user
         }
         return null
+    }
+    getEmployeById(userId){
+        const users = this.readData();
+        let  data = users.user
+        let user = data.find(element => element.id === userId)
+        if(user!= null){
+            return user
+        }
+        return null
+
     }
     getEmployeePermissions(userToken){
         const users = this.readData();
@@ -257,6 +334,20 @@
         let  data = departments.department
         let department = data.find(element => element.departmentName.toLowerCase() === depName.toLowerCase())
         return department
+    }
+    getDepartmentByEmployeeId(employeeId){
+        const users = this.readData()
+        let  data = users.user
+        let user = data.find(element => element.id === employeeId)
+        if(user!= null){
+            let userToken = user.token
+            let userDepartment = this.getDepartment(userToken)
+            return userDepartment
+
+        }
+       return null
+ 
+    
     }
     findLastUser(){
         const users = this.readData()

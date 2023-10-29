@@ -7,23 +7,28 @@ let dep1 = new Department("Admin","03185097377")
 //Contact Detail Object
 let contactdetails = new ContactDetails("sialkot","Punjab","03185097377","Isl Gohdpur")
 //User Object
-let user1 = new User("Talha","23","2000",contactdetails)
+let user1 = new User("Usama Naseer","15","2002",contactdetails)
 let user2 = new User("talha","24","2000",contactdetails)
 let user3 = new User("burhan","24","2000",contactdetails)
 let user4 = new User("Asad","24","2000",contactdetails)
 let user5 = new User("Abdullah","24","2000",contactdetails)
 
-// user1.createEmployee('DNLYOMXgbJSi')
-// user1.addEmployeePermission("DNLYOMXgbJSi","dev")
+//  user3.createEmployee('LEeQeAPOOYeq')
+//  user3.addEmployeePermission("apQlUZVfnvVQ","dev")
 
 // user1.getEmployeeDepartmentId('tksjSmcDTkFW')
 // console.log(user1.getEmployeeDepartmentId('tksjSmcDTkFW'))
 // console.log(user1.getEmployeePermissions('tksjSmcDTkFW'))
 // user5.createEmployee('lGSeTcTCiaoX')
 // user3.addEmployeePermission("lGSeTcTCiaoX","dev")
+// user1.deleteEmployee('DNLYOMXgbJSi','ZmtUfmvijFwn')
+  user1.updateEmployee('PoeAVDZoGUPb',1, user1)
+
 user1.getEmployeeDetails()
+
+
 //    user1.deleteEmployee('grOsXoOkZolP','RotMkUJRNsIU')
-   dep1.getAllDepartments()
+//    dep1.getAllDepartments()
 // user1.getDepartmentByName('dev')
 // user1.addEmployeePermission("DNLYOMXgbJSi","admin")
 // user1.assignDepartment(dep1)
