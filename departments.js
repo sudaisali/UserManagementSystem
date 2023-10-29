@@ -108,6 +108,16 @@ class Department {
         const departments = this.readData();
         console.table(departments.department)
     }
+    getAllDepartments(){
+        const users = this.readData();
+        let data = users.department;
+        let dataArray = []
+        for(let items of data){
+             dataArray.push(items) 
+        }
+        console.table(dataArray)
+
+    }
   
 
 
