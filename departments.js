@@ -26,7 +26,7 @@ class Department {
         const user = this.getUserbyToken(userToken)
         const departmentPermissions = this.getdepartmentsPermissions(userToken)
         if (this.getdepartments().length != 0) {
-            if (user && user.permissions.includes("isCreate") && departmentPermissions.includes("isCreate")) {
+            if (user && user.permissions.includes("isCreate") && departmentPermissions.includes("isCreate")&& user.departmentId ==1) {
                 const departments = this.getdepartments();
                 const isDepartmentExists = departments.some(
                     department => department.departmentName.toLowerCase() === this.departmentName.toLowerCase());

@@ -1,1 +1,175 @@
-{"user":[{"id":1,"name":"sudais","age":"24","salary":"2000","token":"DNLYOMXgbJSi","contactdetails":{"city":"sialkot","state":"Punjab","phone":"03185097377","address":"Isl Gohdpur"},"permissions":["isCreate","isDelete","isUpdate"],"departmentId":1,"createdAt":"10/28/2023","updatedAt":"10/29/2023"},{"id":9,"name":"burhan","age":"24","salary":"2000","token":"BimHyVkWaXMO","contactdetails":{"city":"sialkot","state":"Punjab","phone":"03185097377","address":"Isl Gohdpur"},"permissions":["isCreate","isDelete","isUpdate"],"departmentId":1,"createdAt":"10/29/2023","updatedAt":"10/29/2023"},{"id":11,"name":"Asad","age":"24","salary":"2000","token":"QnvQDGnkNvhg","contactdetails":{"city":"sialkot","state":"Punjab","phone":"03185097377","address":"Isl Gohdpur"},"permissions":["isCreate","isUpdate"],"departmentId":2,"createdAt":"10/29/2023"},{"id":12,"name":"Abdullah","age":"24","salary":"2000","token":"NdWHYvwkOuHb","contactdetails":{"city":"sialkot","state":"Punjab","phone":"03185097377","address":"Isl Gohdpur"},"permissions":["isDelete","isUpdate"],"departmentId":3,"createdAt":"10/29/2023","updatedAt":"10/29/2023"},{"id":15,"name":"Usama Naseer","age":"15","salary":"2002","token":"apQlUZVfnvVQ","contactdetails":{"city":"sialkot","state":"Punjab","phone":"03185097377","address":"Isl Gohdpur"},"permissions":["isCreate","isUpdate"],"departmentId":2,"createdAt":"10/29/2023","updatedAt":"10/29/2023"}],"department":[{"id":1,"departmentName":"Admin","contactNo":"03185097377","permissions":["isCreate","isDelete","isUpdate"],"createdAt":"10/27/2023"},{"id":2,"departmentName":"Hr","contactNo":"03185097377","permissions":["isCreate","isUpdate"],"createdAt":"10/27/2023"},{"id":3,"departmentName":"Dev","contactNo":"03185097377","permissions":["isDelete","isUpdate"],"createdAt":"10/28/2023","UpdatedAt":null}]}
+{
+    "user": [
+        {
+            "id": 2,
+            "name": "Talha Saddique",
+            "age": "15",
+            "salary": "2002",
+            "token": "yZjicpKVXknH",
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "Isl Gohdpur"
+            },
+            "permissions": [
+                "isCreate",
+                "isUpdate",
+                "isDelete"
+            ],
+            "departmentId": 1,
+            "createdAt": "10/30/2023",
+            "updatedAt": "10/30/2023"
+        },
+        {
+            "id": 3,
+            "name": "TalhaSaddique",
+            "age": "15",
+            "salary": "2002",
+            "token": "qhGbKOzaiBVE",
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "Isl Gohdpur"
+            },
+            "permissions": [
+                "isCreate",
+                "isDelete",
+                "isUpdate"
+            ],
+            "departmentId": 1,
+            "createdAt": "10/30/2023"
+        },
+        {
+            "id": 4,
+            "name": "TalhaSaddique",
+            "age": "15",
+            "salary": "2002",
+            "token": "GHArZHGkWmUq",
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "Isl Gohdpur"
+            },
+            "permissions": [
+                "isCreate",
+                "isUpdate"
+            ],
+            "departmentId": 2,
+            "createdAt": "10/30/2023"
+        },
+        {
+            "id": 5,
+            "name": "sduas",
+            "age": "24",
+            "salary": "2000",
+            "token": "vUZZThXPmrsq",
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "Isl Gohdpur"
+            },
+            "permissions": [
+                "isDelete",
+                "isUpdate"
+            ],
+            "departmentId": 3,
+            "createdAt": "10/30/2023",
+            "updatedAt": "10/30/2023"
+        },
+        {
+            "id": 6,
+            "name": "TalhaSaddique",
+            "age": "15",
+            "salary": "2002",
+            "token": "gpOKXGhgRXsH",
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "Isl Gohdpur"
+            },
+            "permissions": [
+                "isCreate",
+                "isUpdate"
+            ],
+            "departmentId": 2,
+            "createdAt": "10/30/2023"
+        },
+        {
+            "id": 7,
+            "name": "TalhaSaddique",
+            "age": "15",
+            "salary": "2002",
+            "token": "NXGvZFDjBKNe",
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "Isl Gohdpur"
+            },
+            "permissions": [
+                "isDelete",
+                "isUpdate"
+            ],
+            "departmentId": 3,
+            "createdAt": "10/30/2023"
+        },
+        {
+            "id": 8,
+            "name": "Ahmed",
+            "age": "15",
+            "salary": "2002",
+            "token": "YrWpbOFkVzLD",
+            "contactdetails": {
+                "city": "sialkot",
+                "state": "Punjab",
+                "phone": "03185097377",
+                "address": "Isl Gohdpur"
+            },
+            "permissions": [
+                "isDelete",
+                "isUpdate"
+            ],
+            "departmentId": 3,
+            "createdAt": "10/30/2023"
+        }
+    ],
+    "department": [
+        {
+            "id": 1,
+            "departmentName": "Admin",
+            "contactNo": "03185097377",
+            "permissions": [
+                "isCreate",
+                "isDelete",
+                "isUpdate"
+            ],
+            "createdAt": "10/27/2023"
+        },
+        {
+            "id": 2,
+            "departmentName": "Hr",
+            "contactNo": "03185097377",
+            "permissions": [
+                "isCreate",
+                "isUpdate"
+            ],
+            "createdAt": "10/27/2023"
+        },
+        {
+            "id": 3,
+            "departmentName": "Dev",
+            "contactNo": "03185097377",
+            "permissions": [
+                "isDelete",
+                "isUpdate"
+            ],
+            "createdAt": "10/28/2023",
+            "UpdatedAt": null
+        }
+    ]
+}
